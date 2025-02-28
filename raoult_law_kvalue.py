@@ -34,6 +34,8 @@ def raoult_law_kvalue( T, P, a, *gamma):
     K = np.zeros(ns) 
     Ps = antoine(a, T)  
     K = Ps/P
+    if gamma < 0:
+        print("Gamma is negative")
     if gamma:
         K *= gamma
 
